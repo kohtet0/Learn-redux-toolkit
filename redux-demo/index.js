@@ -83,6 +83,12 @@ const iceCreamReducer = (state = initialStateOfIceCream, action) => {
         numOfIceCreams: state.numOfIceCreams + action.payload,
       };
 
+    case CAKE_ORDERED:
+      return {
+        ...state,
+        numOfIceCreams: state.numOfIceCreams - 1,
+      };
+
     default:
       return state;
   }
@@ -94,11 +100,11 @@ const rootReducer = combineReducers({
 });
 
 // store
-const store = createStore(rootReducer, applyMiddleware(logger.logger));
-// console.log("initial state", store.getState());
+const store = createStore(rootReducer);
+console.log("initial state", store.getState());
 
 const unsubscribe = store.subscribe(() => {
-  // console.log("update state", store.getState());
+  console.log("update state", store.getState());
 });
 
 // Use bindActionCreators correctly to bind action creators to the store's dispatch
