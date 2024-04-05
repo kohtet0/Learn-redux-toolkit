@@ -1,0 +1,10 @@
+{
+  "name": "rtk-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
+    "redux-logger": "^3.0.6"
+  }
+}
